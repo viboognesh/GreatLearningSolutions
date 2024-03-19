@@ -1,0 +1,74 @@
+body {
+    background: url('image.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border: 2px solid #333;
+    border-radius: 10px;
+    background-color: transparent;
+    width: 300px;
+    margin: 50px auto;
+}
+
+input:focus {
+    background-color: rgba(70, 130, 180, 0.35);
+    /* Steel blue with 35% opacity */
+}
+
+h2 {
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 20px;
+    color: antiquewhite;
+    /* Adds some space between the heading and the inputs */
+}
+
+input {
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 80%;
+    border-radius: 5px;
+    border: 1px solid #333;
+}
+
+button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    /* Adjusts the space between buttons */
+    width: 100%;
+    /* Ensures the container takes the full width of the form */
+}
+
+input:focus {
+    background-color: rgba(75, 192, 192, 0.35);
+}
+
+button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    margin: 10px 0;
+}
+
+button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+}
+
+button[type="reset"] {
+    background-color: #f44336;
+    color: white;
+}
