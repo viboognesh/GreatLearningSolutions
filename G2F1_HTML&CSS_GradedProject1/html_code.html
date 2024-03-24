@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pharmacy</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+    <div class="header">Pharmacy</div>
+    <div style="position: sticky; top: 0; z-index: 1000; background-color: #7E7E7Fff;">
+        <nav class="navbar">
+            <a href="#home">Home</a>
+            <div class="dropdown">
+                <button class="dropbtn">Our Medicines
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="#">Fever</a>
+                    <a href="#">Muscle Pains</a>
+                    <a href="#">Cold & Cough</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Health Care
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="#">Baby Care</a>
+                    <a href="#">Skin Care</a>
+                    <a href="#">Home Care</a>
+                    <a href="#">Personal Care</a>
+                    <a href="#">Pet Care</a>
+                </div>
+            </div>
+            <a href="#labtest">Lab Test</a>
+        </nav>
+    </div>
+
+    <div id="labtest">
+        <div class="overlay">
+            <div class="container">
+                <div class="form-container">
+                    <form action="#" method="post" style="flex: 1;">
+                        <fieldset></fieldset>
+                        <fieldset>
+                            <legend class="parent">1. Your Contact Details</legend>
+                            <div class="input-group">
+                                <div class="input-box">
+                                    <label for="fullName"></label>
+                                    <input class="underline-input" type="text" id="fullName" name="fullName" required
+                                        placeholder="Full Name">
+                                </div>
+                                <div class="input-box">
+                                    <label for="patientId"></label>
+                                    <input class="underline-input" type="text" id="patientId" name="patientId"
+                                        placeholder="Patient ID (if exists):">
+                                </div>
+                                <div class="input-box">
+                                    <label for="contactNumber"></label>
+                                    <input class="underline-input" type="tel" id="contactNumber" name="contactNumber"
+                                        required placeholder="Contact Number:">
+                                </div>
+                                <div class="input-box">
+                                    <label for="emailId"></label>
+                                    <input class="underline-input" type="email" id="emailId" name="emailId" required
+                                        placeholder="Email ID:">
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>Address</legend>
+                            <div class="input-group">
+                                <div class="input-box">
+                                    <label for="houseNumber"></label>
+                                    <input class="underline-input" type="text" id="houseNumber" name="houseNumber"
+                                        required placeholder="House Number"><br>
+                                </div>
+                                <div class="input-box">
+                                    <label for="street"></label>
+                                    <input class="underline-input" type="text" id="street" name="street" required
+                                        placeholder="Street"><br>
+                                </div>
+                                <div class="input-box">
+                                    <label for="area"></label>
+                                    <input class="underline-input" type="text" id="area" name="area" required
+                                        placeholder="Area"><br>
+                                </div>
+                                <div class="input-box"></div>
+                                <div class="input-box">
+                                    <label for="district" style="font-weight: bold;">District:</label>
+                                    <select id="district" name="district" required
+                                        style="width: 50%; height: 80%; background-color: white; margin-top: 10px">
+                                        <option value="" selected>Choose</option>
+                                        <option value="district1">District 1</option>
+                                        <option value="district2">District 2</option>
+                                        <!-- Add more options as needed -->
+                                    </select><br>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>Choose the Test Type</legend>
+                            <div class="input-group">
+                                <div class="input-box-checkbox">
+                                    <input type="checkbox" id="cbc" name="testType" value="CBC">
+                                    <label for="cbc">CBC</label><br>
+                                </div>
+                                <div class="input-box-checkbox">
+                                    <input type="checkbox" id="completeUrine" name="testType" value="Complete Urine">
+                                    <label for="completeUrine">Complete Urine</label><br>
+                                </div>
+                                <div class="input-box-checkbox">
+                                    <input type="checkbox" id="lipidProfile" name="testType" value="Lipid Profile">
+                                    <label for="lipidProfile">Lipid Profile</label><br>
+                                </div>
+                                <div class="input-box-checkbox">
+                                    <input type="checkbox" id="tsh" name="testType" value="TSH">
+                                    <label for="tsh">Thyroid Stimulating Hormone (TSH)</label><br>
+                                </div>
+                                <div class="input-box-checkbox">
+                                    <input type="checkbox" id="glucoseTest" name="testType" value="Glucose Test">
+                                    <label for="glucoseTest">Glucose Test</label><br>
+                                </div>
+                                <div class="input-box-checkbox"></div>
+                            </div>
+                            <p style="font-style: italic; margin-left: 10px;">Check at least one box without fail.</p>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>Do you want a hard copy of the report also?</legend>
+                            <div class="input-group">
+                                <div class="input-box-checkbox">
+                                    <input type="radio" id="yes" name="hardCopy" value="Yes">
+                                    <label for=" yes">Yes</label><br>
+                                </div>
+                                <div class="input-box-checkbox">
+                                    <input type="radio" id="no" name="hardCopy" value="No">
+                                    <label for="no">No</label><br>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>Select Your Comfortable Date and Time</legend>
+                            <div class="input-group">
+                                <div class="input-box">
+                                    <label for="date">Date:</label>
+                                    <input type="date" id="date" name="date" required><br>
+                                </div>
+                                <div class="input-box">
+                                    <label for="time">Time:</label>
+                                    <input type="time" id="time" name="time" required><br>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <button type="reset">Reset</button>
+                        <button type="submit">Submit</button>
+
+                    </form>
+                </div>
+                <div class="image-section">
+                    <img id="fixedImage" src="Images\Lab-Test\lab-test.jpg" alt="Description">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="slider">
+        <img src="Images\Animation\ani1.jpg" style="width:100%">
+        <img src="Images\Animation\ani2.jpg" style="width:100%">
+        <img src="Images\Animation\ani3.jpg" style="width:100%">
+        <!-- <img src="Images\Animation\ani4.jpg" style="width:100%">
+        <img src="Images\Animation\ani5.jpg" style="width:100%"> -->
+    </div>
+
+    <div class="product-section">
+        <h2>Covid Care</h2>
+        <div class="product-container">
+            <div class="product">
+                <img src="Images\Products\c1.jpg" alt="Product Image">
+                <h3>Product Name</h3>
+                <p>Price: $100</p>
+                <p>Price After Offer: $80</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="Images\Products\c2.jpg" alt="Product Image">
+                <h3>Product Name</h3>
+                <p>Price: $100</p>
+                <p>Price After Offer: $80</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="Images\Products\c3.jpg" alt="Product Image">
+                <h3>Product Name</h3>
+                <p>Price: $100</p>
+                <p>Price After Offer: $80</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="Images\Products\c4.jpg" alt="Product Image">
+                <h3>Product Name</h3>
+                <p>Price: $100</p>
+                <p>Price After Offer: $80</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <!-- Add more products as needed -->
+        </div>
+    </div>
+
+    <div class="product-section">
+        <h2>Diabetes Care</h2>
+        <div class="product-container">
+            <div class="product">
+                <img src="Images\Products\d1.jpg" alt="Product Image">
+                <h3>Product Name</h3>
+                <p>Price: $120</p>
+                <p>Price After Offer: $90</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="Images\Products\d2.jpg" alt="Product Image">
+                <h3>Product Name</h3>
+                <p>Price: $120</p>
+                <p>Price After Offer: $90</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="Images\Products\d3.jpg" alt="Product Image">
+                <h3>Product Name</h3>
+                <p>Price: $120</p>
+                <p>Price After Offer: $90</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="Images\Products\d4.png" alt="Product Image">
+                <h3>Product Name</h3>
+                <p>Price: $120</p>
+                <p>Price After Offer: $90</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <!-- Add more products as needed -->
+
+        </div>
+    </div>
+
+
+    <div class="footer">@copyright. Only for demonstration purposes</div>
+</body>
+
+</html>

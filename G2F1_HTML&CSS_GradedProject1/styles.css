@@ -1,0 +1,355 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    display: block;
+    background-color: #505050ff;
+    text-align: center;
+    color: white;
+    padding: 20px 0;
+    font-weight: bold;
+    font-size: x-large;
+
+}
+
+.footer {
+    background-color: #262626ff;
+    text-align: center;
+    padding: 20px 0;
+    color: white;
+}
+
+.navbar {
+    display: flex;
+    overflow: visible;
+    background-color: #7E7E7Fff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+
+.navbar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+.dropdown .dropbtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+.navbar a:hover,
+.dropdown:hover .dropbtn {
+    background-color: #262626ff;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.slider {
+    width: 100%;
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+}
+
+.slider img {
+    width: 100%;
+    height: 400px;
+    position: absolute;
+    animation: slide 12s infinite;
+    border: 2px solid steelblue;
+}
+
+@keyframes slide {
+    0% {
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    33% {
+        opacity: 1;
+    }
+
+    53% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.slider img:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.slider img:nth-child(2) {
+    animation-delay: 4s;
+}
+
+.slider img:nth-child(3) {
+    animation-delay: 8s;
+}
+
+.product-section {
+    display: flex;
+    /* flex-wrap: wrap; */
+    flex-direction: column;
+    align-items: center;
+    /* Allows the products to wrap onto the next line if there's not enough space */
+    /* justify-content: space-between; */
+    max-width: 100%;
+    /* Adds space between the products */
+}
+
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.product {
+    flex: 0 0 auto;
+    width: 300px;
+    margin: 10px;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.product:hover {
+    transform: scale(1.05);
+}
+
+.product img {
+    width: 300px;
+    height: 200px;
+    object-fit: contain;
+}
+
+.add-to-cart {
+    background-color: #008000;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart:hover {
+    background-color: #006400;
+}
+
+.add-to-cart:active {
+    background-color: rgb(250, 234, 230);
+    border: 2px solid rgb(0, 255, 76);
+}
+
+
+/* Form styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f1f1f1;
+    /* padding: 20px; */
+}
+
+form {
+    float: left;
+    background-color: #fff;
+    padding-right: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+fieldset {
+    border: none;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+legend {
+    display: flex;
+    border: none;
+    font-weight: bold;
+    padding: 0 10px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* input[type="text"], */
+/* input[type="tel"], */
+input[type="date"],
+/* input[type="email"], */
+input[type="time"],
+select {
+    width: 50%;
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.input-group {
+    display: flex;
+    flex-wrap: wrap;
+    /* Allows the items to wrap as needed */
+    justify-content: space-between;
+    /* Adds space between the items */
+    margin: 10px;
+    /* Adds some space around each group */
+}
+
+.input-box {
+    flex-basis: calc(50% - 10px);
+    margin: 5px;
+    /* text-align: center; */
+}
+
+.input-box-checkbox {
+    display: flex;
+    flex-basis: calc(50% - 10px);
+    margin: 5px;
+}
+
+.underline-input {
+    flex-basis: calc(50%-10px);
+    margin: 5px;
+    border: none;
+    width: 90%;
+    border-bottom: 2px solid #1890ff;
+    outline: none;
+    padding: 5px;
+    /* text-align: center; */
+    font-size: 15px;
+    line-height: 2;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.form-container {
+    flex: 1;
+}
+
+.image-section {
+    flex: 1;
+    position: fixed;
+    float: right;
+    top: 0;
+    right: 0;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.image-section img {
+    width: 100%;
+    height: auto;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.overlay-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+/* Show the overlay when the URL fragment is #labtest */
+#labtest:target~#overlay {
+    display: block;
+}
