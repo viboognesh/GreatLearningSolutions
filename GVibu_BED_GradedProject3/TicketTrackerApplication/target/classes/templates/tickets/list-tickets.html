@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymleaf.org">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+	<title>Ticket Tracker</title>
+
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+		<ul class="navbar-nav">
+			<li class="nav-item active">
+				<a class="nav-link" href="">Ticket Tracker Application</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="/tickets/list">Tickets</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="/tickets/showTicketFormForAdd">New Ticket</a>
+			</li>
+		</ul>
+	</nav>
+
+	<div class="container mt-5 pt-2">
+		<h1>List Of Tickets</h1>
+		<hr>
+		<div th:if="${param.success}">
+			<div class="alert alert-info"> Ticket saved Successfully!
+
+
+			</div>
+		</div>
+		<div th:if="${param.del}">
+			<div class="alert alert-danger"> Ticket deleted Successfully!
+
+
+			</div>
+		</div>
+		<form class="form-inline" th:action="@{/tickets/searchTicket/submit}" th:object="${tickets}" method="get">
+			<input class="form-control mr-sm-2" type="text" id="expression" placeholder="Search" name="expression">
+			<button class="btn btn-primary" type="submit">Search</button>
+		</form>
+		<br>
+		<table class="table table-striped">
+			<thead class="thead-dark">
+				<tr>
+					<th>#</th>
+					<th>Ticket Title</th>
+					<th>Ticket Short Description</th>
+					<th>Ticket Created On</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="ticket, inc :${tickets}">
+					<td th:text="${inc.count}"></td>
+					<td th:text="${ticket.ticketTitle}"></td>
+					<td th:text="${ticket.ticketDesc}"></td>
+					<td th:text="${ticket.ticketCreated}"></td>
+					<td>
+						<a th:href="@{/tickets/showTicketFormForEdit/{id}(id=${ticket.id})}"><button type="button"
+								class="btn btn-primary">Edit</button></a>
+						<a th:href="@{/tickets/showTicketFormForView/{id}(id=${ticket.id})}"><button type="button"
+								class="btn btn-info">View</button></a>
+						<a th:href="@{/tickets/delete/{id}(id=${ticket.id})}" title="Delete"
+							onclick="if (!(confirm('Are you sure?'))) return false"><button type="button"
+								class="btn btn-danger">Delete</button></a>
+					</td>
+
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div style="margin-top:150px; padding:10px; background-color: lightgray; text-align: center;">
+		<footer>
+			<p>Copyright &copy; 2023 Great Learning All Rigts Reserved</p>
+		</footer>
+	</div>
+</body>
+
+</html>

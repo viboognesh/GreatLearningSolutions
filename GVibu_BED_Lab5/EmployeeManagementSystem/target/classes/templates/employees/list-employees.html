@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymleaf.org">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+	<title>Employee Management System</title>
+
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+		<ul class="navbar-nav">
+			<li class="nav-item active">
+				<a class="nav-link" href="/employees/list">Employee Management System</a>
+			</li>
+
+		</ul>
+	</nav>
+
+	<div class="container mt-5 pt-2">
+		<h1>Employees List</h1>
+
+		<a href="/employees/showEmployeeFormForAdd"><button type="button" class="btn btn-primary">Add
+				Employee</button></a>
+		<div th:if="${param.success}">
+			<div class="alert alert-info"> Employee details saved Successfully!
+
+
+			</div>
+		</div>
+		<div th:if="${param.del}">
+			<div class="alert alert-danger"> Employee details deleted Successfully!
+
+
+			</div>
+		</div>
+
+		<hr>
+
+		<table class="table table-striped">
+			<thead class="thead-dark">
+				<tr>
+					<th>#</th>
+					<th>Employee First Name</th>
+					<th>Employee Last Name</th>
+					<th>Employee Email</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="employee, inc :${employees}">
+					<td th:text="${inc.count}"></td>
+					<td th:text="${employee.firstName}"></td>
+					<td th:text="${employee.lastName}"></td>
+					<td th:text="${employee.email}"></td>
+					<td>
+						<a th:href="@{/employees/showEmployeeFormForUpdate/{id}(id=${employee.id})}"><button
+								type="button" class="btn btn-primary">Update</button></a>
+						<a th:href="@{/employees/delete/{id}(id=${employee.id})}" title="Delete"
+							onclick="if (!(confirm('Are you sure?'))) return false"><button type="button"
+								class="btn btn-danger">Delete</button></a>
+					</td>
+
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+
+</body>

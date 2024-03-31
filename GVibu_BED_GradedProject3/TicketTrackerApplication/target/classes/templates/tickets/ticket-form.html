@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymleaf.org">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+	<title>Create Ticket</title>
+
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+		<ul class="navbar-nav">
+			<li class="nav-item active">
+				<a class="nav-link" href="">Ticket Tracker Application</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="/tickets/list">Tickets</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="/tickets/showTicketFormForAdd">New Ticket</a>
+			</li>
+		</ul>
+	</nav>
+
+	<div class="container mt-5 pt-2"
+		style="border:gray; border-width:1px; border-style:solid; width: 50%; margin-left: 25%;">
+		<div class="panel-heading">
+
+			<h3 th:if="${type == 'new'}" style="background-color: lightgray; padding: 10px; text-align: center;">Create
+				Ticket</h3>
+			<h3 th:if="${type == 'edit'}" style="background-color: lightgray; padding: 10px; text-align: center;">Edit
+				Ticket</h3>
+			<h3 th:if="${type == 'view'}" style="background-color: lightgray; padding: 10px; text-align: center;">Ticket
+				Details</h3>
+
+		</div>
+		<div class="panel-body">
+
+			<form th:action="@{/tickets/saveTicket}" th:object="${tickets}" method="post">
+				<div class="form-group">
+					<input type="hidden" th:field="*{id}" />
+					<label for="ticketTitle">Title</label>
+					<input type="text" class="form-control" placeholder="Enter Ticket Title" name="ticketTitle"
+						th:field="*{ticketTitle}" required="required" />
+				</div>
+				<div class="form-group">
+					<label for="titleDesc">Short Description</label>
+					<textarea type="text" class="form-control" placeholder="Enter Ticket Description" name="titleDesc"
+						th:field="*{ticketDesc}" required="required"></textarea>
+				</div>
+				<div class="form-group">
+					<label for="content">Content</label>
+					<textarea type="text" class="form-control" placeholder="Enter Content" name="content"
+						th:field="*{content}" required="required"></textarea>
+				</div>
+
+				<button th:disabled="${enableSubmit} ? false : true" type="submit"
+					class="btn btn-primary">Submit</button>
+			</form>
+			<br>
+		</div>
+	</div>
+	<div style="margin-top:150px; padding:10px; background-color: lightgray; text-align: center;">
+		<footer>
+			<p>Copyright &copy; 2023 Great Learning All Rigts Reserved</p>
+		</footer>
+	</div>
+
+</body>
+
+</html>
