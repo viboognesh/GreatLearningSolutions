@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <style>
+        body {
+            background-image: url('images/background_image.jpg');
+            background-size: cover;
+            font-family: Arial, sans-serif;
+        }
+
+        #weather-container {
+            text-align: center;
+            padding: 20px;
+            /* background-color: rgba(255, 255, 255, 0.8); */
+            margin-top: 50px;
+        }
+
+        #city-input {
+            border: 2px solid #b3b3b3;
+            /* Border color */
+            background: #dddddd;
+            /* Background color */
+            width: 25%;
+            /* Full width */
+            border-radius: 10px 0 10px  0;
+            /* Rounded corners at top-left and bottom-right */
+            padding: 10px;
+            /* Padding inside the textbox */
+            box-sizing: border-box;
+            /* Include padding and border in the element's total width and height */
+            outline: none;
+            /* Remove default outline */
+        }
+
+        #city-input:focus {
+            border-color: #a0d18c;
+            /* Change border color on focus */
+            box-shadow: 0 0 0 2px #a0d18c;
+            /* Underline color at the bottom */
+        }
+
+        #weather-info {
+            margin-top: 20px;
+            height: 100%;
+        }
+
+        #city-name {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: whitesmoke;
+        }
+
+        #date {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: whitesmoke;
+        }
+
+        #temperature {
+            font-size: 96px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: whitesmoke;
+        }
+
+        #weather-desc {
+            font-size: 48px;
+            margin-bottom: 10px;
+            color: whitesmoke;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="weather-container">
+        <input type="text" id="city-input" placeholder="Enter city name">
+        <div id="weather-info">
+            <h2 id="city-name"></h2>
+            <h3 id="date"></h3>
+            <h1 id="temperature"></h1>
+            <h2 id="weather-desc"></h2>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
