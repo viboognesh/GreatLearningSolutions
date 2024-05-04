@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Layout</title>
+    <link rel="stylesheet" href="resume_style.css">
+</head>
+
+<body>
+    <div id="NoResumeFound">
+        <div class="no-resume-input-box">
+            <input type="text" id="NoResumeFoundSearchBox" placeholder="Search">
+        </div>
+        <div class="no-resume-text">
+            <p>No Resume Found</p>
+        </div>
+    </div>
+    <div id="ResumeContent">
+        <header>
+            <div class="search-header">
+                <div class="search-controls">
+                    <button id="prevButton">Previous</button>
+                    <input type="text" id="searchBox" placeholder="Search">
+                    <button id="nextButton">Next</button>
+                </div>
+                <div class="header-container">
+                    <div class="header-text">
+                        <h1 id="name">Name</h1>
+                        <span id="AppliedFor">Applied For</span>
+                    </div>
+                    <img id="profile" src="profile.jpg" alt="Profile Picture">
+                </div>
+            </div>
+
+        </header>
+        <main>
+            <aside class="sidebar">
+                <h2>Personal Information</h2>
+                <ul>
+                    <li id="phone">Phone</li>
+                    <li id="email">Email</li>
+                    <li id="linkedin"><a href="https://linkedin.com/john">LinkedIn</a></li>
+                </ul>
+                <h2>Technical Skills</h2>
+                <ul id="skills">
+                    <li>skills1</li>
+                    <li>skills2</li>
+                    <li>skills3</li>
+                </ul>
+                <h2>Hobbies</h2>
+                <ul id="hobbies">
+                    <li>hobby1</li>
+                    <li>hobby2</li>
+                    <li>hobby3</li>
+                </ul>
+            </aside>
+            <section class="main-content">
+                <article>
+                    <h2>Work Experience</h2>
+                    <p id="Company Name">Company Name</p>
+                    <p id="Position"><b>Position</b></p>
+                    <p id="Start Date">Start Date</p>
+                    <p id="End Date">End Date</p>
+                    <p id="Summary">Summary</p>
+                </article>
+                <article>
+                    <h2>Projects</h2>
+                    <p id="projects">Details about projects...</p>
+                </article>
+                <article>
+                    <h2>Education</h2>
+                    <ul id="education">
+                        <li>UG</li>
+                        <li>Senior Secondary</li>
+                        <li>High School</li>
+                    </ul>
+                </article>
+                <article>
+                    <h2>Internship</h2>
+                    <ul id="Internship" style="list-style-type: none;">
+                        <li>Internship1</li>
+                        <li>Internship2</li>
+                        <li>Internship3</li>
+                    </ul>
+                </article>
+                <article>
+                    <h2>Achievements</h2>
+                    <ul id="achievements">
+                        <li>Achievement1</li>
+                        <li>Achievement2</li>
+                        <li>Achievement3</li>
+                    </ul>
+                </article>
+            </section>
+        </main>
+    </div>
+    <script src="resume_script.js"></script>
+</body>
+
+</html>

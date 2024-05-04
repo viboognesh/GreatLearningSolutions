@@ -1,0 +1,139 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 20%;
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.search-controls {
+    position: relative;
+    /* Make the container a reference point for absolute positioning */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 5px;
+}
+
+#prevButton {
+    position: absolute;
+    left: 0;
+    /* Align to the left edge of the container */
+}
+
+#searchBox {
+    position: absolute;
+    left: 50%;
+    height: 20px;
+    width: 160px;
+    /* Center the search box */
+    transform: translateX(-50%);
+    /* Adjust the position to perfectly center the box */
+}
+
+#nextButton {
+    position: absolute;
+    right: 0;
+    /* Align to the right edge of the container */
+}
+
+.search-header {
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.header-text {
+    text-align: center;
+}
+
+.header-text h1 {
+    margin-bottom: 10px;
+}
+
+header img {
+    float: right;
+    width: 10%;
+    /* Adjust as needed */
+    height: auto;
+    /* Adjust as needed */
+    object-fit: contain;
+    /* Ensures the image fits within the header */
+}
+
+main {
+    display: flex;
+    height: 100%;
+}
+
+.sidebar {
+    width: 20%;
+    background-color: #e0e0e0;
+    padding: 20px;
+    float: left;
+    /* position: fixed; */
+    height: auto;
+    /* Adjusts height based on content */
+    overflow-y: auto;
+    /* Adds scrollbar if content exceeds height */
+}
+
+.main-content {
+    width: 80%;
+    padding: 20px;
+    float: right;
+    box-sizing: border-box;
+    /* Ensures padding doesn't affect width */
+}
+
+article {
+    margin-bottom: 20px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#NoResumeFound {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    /* Cover the entire viewport width */
+    height: 100vh;
+    /* Cover the entire viewport height */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent background */
+    color: white;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    font-size: 100px;
+    line-height: 1.5;
+    text-align: center;
+    /* z-index: 9999; */
+    /* Ensure it's above other content */
+    overflow: auto;
+    /* Enable scrolling if content exceeds viewport size */
+}
+
+#ResumeContent {
+    display: block;
+}
